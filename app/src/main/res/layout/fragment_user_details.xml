@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userDetail"
+            type="com.csquare.sampleapp.model.Datum" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_user"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/image_user"
+            app:layout_constraintEnd_toEndOf="@+id/image_user"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first_name"
+            android:padding="@dimen/text_padding_16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_user" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/first_name_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userDetail.firstName}"
+            android:paddingTop="@dimen/text_padding_16dp"
+            android:paddingBottom="@dimen/text_padding_16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintLeft_toRightOf="@+id/first_name"
+            app:layout_constraintTop_toBottomOf="@+id/image_user" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_name"
+            android:padding="@dimen/text_padding_16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/last_name_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userDetail.lastName}"
+            android:paddingTop="@dimen/text_padding_16dp"
+            android:paddingBottom="@dimen/text_padding_16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintLeft_toRightOf="@+id/last_name"
+            app:layout_constraintTop_toBottomOf="@+id/first_name_data" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/email_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_id"
+            android:padding="@dimen/text_padding_16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/last_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/email_id_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userDetail.email}"
+            android:paddingTop="@dimen/text_padding_16dp"
+            android:paddingBottom="@dimen/text_padding_16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintLeft_toRightOf="@+id/email_id"
+            app:layout_constraintTop_toBottomOf="@+id/last_name_data" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
